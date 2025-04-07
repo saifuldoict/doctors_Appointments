@@ -181,4 +181,7 @@ const cancelAppointment = async (req, res) => {
         res.json({success:false, message:error.message})
     }
 }
+//API to make payment SSL payment gateway
+
+
 export {registerUser, loginUser, getUserProfile, updateUserProfile, bookAppointment, listAppointment, cancelAppointment}
