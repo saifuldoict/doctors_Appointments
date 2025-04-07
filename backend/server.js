@@ -6,7 +6,7 @@ import connectCloudinary from './config/Cloudinary.js';
 import adminRouter from './routes/adminRoute.js';
 import doctorRouter from './routes/doctorRoute.js';
 import userRouter from './routes/userRoute.js';
-import SSLCommerzPayment from 'sslcommerz-lts'
+// import SSLCommerzPayment from 'sslcommerz-lts'
 
 
 // app config
@@ -16,9 +16,9 @@ connectDB();
 connectCloudinary();
 
 // SSL payment getway
-const store_id = process.env.SSLCOMMERZ_STORE
-const store_passwd = process.env.STORE_PASSWORD
-const is_live = false //true for live, false for sandbox
+// const store_id = process.env.SSLCOMMERZ_STORE
+// const store_passwd = process.env.STORE_PASSWORD
+// const is_live = false //true for live, false for sandbox
 
 
 
