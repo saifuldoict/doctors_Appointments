@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import logo from '../images/logo.jpg'
-import profile from '../images/profile.jpg'
+import profile from '../images'
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { NavLink, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets';
