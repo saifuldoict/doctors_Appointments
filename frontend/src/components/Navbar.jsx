@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
-import logo from '../images/logo.jpg'
-import profile from '../images'
+
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { NavLink, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets';
@@ -20,7 +19,7 @@ const Navbar = () => {
    
   return (
     <div className=' flex item-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
-        <img onClick={()=>navigate('/')} className='w-10 cursor-pointer' src={logo} alt="Logo"/>
+        <img onClick={()=>navigate('/')} className='w-10 cursor-pointer' src={assets.logo} alt="Logo"/>
         <ul className='hidden md:flex item-start gap-5 font-medium '>
             <NavLink to="/">
                 <li className='py-1 change'>Home</li>

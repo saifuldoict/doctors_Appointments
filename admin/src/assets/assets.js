@@ -5,6 +5,7 @@ import dashboard_icon from './dashboard_icon.png';
 import doctor_icon from './doctor_icon.svg';
 import list_icon from './list_icon.svg';
 import patients_icon from './patients_icon.svg';
+import cancel from './cancel.svg';
 
 export const assets = {
         add_doctor_icon,
@@ -12,5 +13,6 @@ export const assets = {
         dashboard_icon,
         doctor_icon,
         list_icon,
-        patients_icon
+        patients_icon,
+        cancel
 }

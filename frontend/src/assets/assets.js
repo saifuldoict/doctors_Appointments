@@ -14,30 +14,30 @@ export const assets = {
     profile
 }
 
-export const specialityData = [
+export const specialData = [
     {
-        speciality: 'General physician',
+        specialist: 'General physician',
         image: 'General physician'
         
     },
     {
-        speciality: 'Gynecologist',
+        specialist: 'Gynecologist',
         image: 'Gynecologist'
     },
     {
-        speciality: 'Dermatologist',
+        specialist: 'Dermatologist',
         image: 'Dermatologist'
     },
     {
-        speciality: 'Neurologist',
+        specialist: 'Neurologist',
         image: 'Neurologist'
     },
     {
-        speciality: 'Pediatricians',
+        specialist: 'Pediatricians',
         image: 'Pediatricians'
     },
     {
-        speciality: 'Gastroenterologist',
+        specialist: 'Gastroenterologist',
         image: 'Gastroenterologist'
     }
 
