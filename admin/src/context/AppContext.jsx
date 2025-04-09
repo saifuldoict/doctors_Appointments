@@ -3,6 +3,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
   const currency = "$"
+
   const calculateAge = (dob) => {
     const today = new Date();
     const birthDate = new Date(dob);
@@ -11,8 +12,9 @@ const AppContextProvider = (props) => {
     return age
   }
   const months = ['','January', 'February', 'March', 'April', 'May', 'June', 'july', 'August', 'September', 'October', 'November', 'December']
+  
   const slotDateFormat = (slotDate)=>{
-    const dateArray = slotDate.split(' ')
+    const dateArray = slotDate.split('_')
     return dateArray[0]+ " "+ months[Number(dateArray[1])] + ' '+ dateArray[2]
   }
     const value = {

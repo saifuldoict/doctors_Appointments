@@ -6,6 +6,7 @@ import { assets } from '../../assets/assets'
 const AllAppointments = () => {
   const {aToken, appointments, getAllAppointments, cancelAppointment} = useContext(AdminContext)
   const {calculateAge, slotDateFormat, currency} = useContext(AppContext)
+  console.log(slotDateFormat)
 
   useEffect(()=>{
     if(aToken){
