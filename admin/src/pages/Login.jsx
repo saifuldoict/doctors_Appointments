@@ -1,6 +1,7 @@
 // src/components/AdminLoginForm.js
 
 import React, { useState, useContext} from 'react';
+import { assets } from '../assets/assets.js';
 import {AdminContext} from '../context/AdminContext.jsx';
 import axios from 'axios'
 import { toast } from 'react-toastify';
@@ -11,6 +12,7 @@ const AdminLoginForm = () => {
   const {setAToken, backendUrl} = useContext(AdminContext)
 
   const {setDToken}= useContext(DoctorContext)
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -33,6 +35,9 @@ const AdminLoginForm = () => {
           localStorage.setItem('dToken',data.token)
           setDToken(data.token)
           console.log(data.token)
+          
+        }else{
+          toast.error(data.message)
         }
       }
 

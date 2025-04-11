@@ -85,9 +85,8 @@ const getDashData = async ()=>{
     const value ={
         aToken,setAToken,
         backendUrl,doctors,
-        getAllDoctors,
-        changeAvailability,
-        appointments,setAppointments,
+        getAllDoctors, changeAvailability,
+        appointments, setAppointments,
         getAllAppointments,
         cancelAppointment,
         dashData, getDashData

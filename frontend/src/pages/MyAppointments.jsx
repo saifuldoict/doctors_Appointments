@@ -20,7 +20,7 @@ const MyAppointments = () => {
       const {data}= await axios.get(backendUrl+ '/api/user/list-appointment', {headers:{token}})
       if(data.success){
         setAppointments(data.appointments.reverse())
-       
+       console.log(data.appointments)
       }
     }catch(error){
       console.log(error)

@@ -6,7 +6,8 @@ import { assets } from '../../assets/assets'
 const AllAppointments = () => {
   const {aToken, appointments, getAllAppointments, cancelAppointment} = useContext(AdminContext)
   const {calculateAge, slotDateFormat, currency} = useContext(AppContext)
-  console.log(slotDateFormat)
+  
+
 
   useEffect(()=>{
     if(aToken){
@@ -31,16 +32,18 @@ const AllAppointments = () => {
           <div key={index} className='flex flex-wrap justify-between max-sm:gap-2 sm:grid sm:grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b-gray-50 hover:bg-gray-50'>
            <p className='max-sm:hidden'>{index +1}</p>
            <div className='flex items-center gap-28'>
-            <img className='w-8 rounded-full' src={item.docData.image}/>
-            <p>{item.docData.name}</p>
+            <img className='w-8 rounded-full' src={item.userData.image}/>
+            <p className='max-sm:hidden'>{calculateAge(item.userData.dob)}</p>
            </div>
-           <p className='max-sm:hidden'>{calculateAge(item.docData.dob)}</p>
-           <p>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
+           <p className='max-sm:hidden'>{calculateAge(item.userData.dob)}</p>
+           <p className=''>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
+        
+        {/*doctor info */}
            <div className='flex items-center gap-2'>
             <img className='w-8 rounded-full bg-gray-200' src={item.docData.image}/>
             <p>{item.docData.name}</p>
            </div>
-           <p>{currency},{item.docData.fees}</p>
+           <p>{currency},{item.amount}</p>
            {item.cancelled
            ?<p className='text-red-400 text-xs font-medium'>cancelled</p>
            :<img onClick={()=>cancelAppointment(item._id)} className='w-8 cursor-pointer' src={assets.cancel}/>
