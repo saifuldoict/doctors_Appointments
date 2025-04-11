@@ -4,7 +4,7 @@ import { AppContext } from '../../context/AppContext';
 
 const DoctorAppointments = () => {
   const {dToken, appointments, getAppointments} = useContext(DoctorContext);
-  const {calculateAge} = useContext(AppContext)
+  const {calculateAge, slotDateFormat} = useContext(AppContext)
 
   useEffect(()=>{
    if(dToken){
@@ -28,10 +28,17 @@ const DoctorAppointments = () => {
           appointments.map((item, index) => (
             <div key={index}>
               <p>{index+1}</p>
-              <img src={item.useDate.image}/>
-              <p>{item.useDate.name}</p>
+              <img src={item.userDate.image}/>
+              <p>{item.userDate.name}</p>
+              <div>
+                <p className='text-green-500'>
+                  {item.payment ? 'Online': 'cash'}
+                </p>
+              </div>
+              <p>{calculateAge(item.userDate.dob)}</p>
+              <p>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
             </div>
-            //payment info add will added 14:03
+           
             
           ))
         }

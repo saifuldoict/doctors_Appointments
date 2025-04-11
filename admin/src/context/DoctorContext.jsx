@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 import {toast} from 'react-toastify';
+
 export const DoctorContext = createContext()
 
 const DoctorContextProvider = (props)=>{
@@ -11,9 +12,10 @@ const DoctorContextProvider = (props)=>{
 
  const [appointments, setAppointments] = useState([])
 
- const getAppointments = async ()=>{
+ const getAppointments = async () =>{
     try{
      const {data} = await axios.get(backendUrl+ '/api/doctor/appointments', {headers:{dToken}})
+     
      if(data.success){
         setAppointments(data.appointments.reverse())// latest appointment first
         console.log(data.appointments.reverse());
