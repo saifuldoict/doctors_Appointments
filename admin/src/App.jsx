@@ -19,7 +19,7 @@ const App = () => {
   const {aToken} = useContext(AdminContext)
   const {dToken} = useContext(DoctorContext)
 
-  return aToken || dToken? (
+  return aToken || dToken ? (
     <div className='bg-[#F8F9FD]'>
       <ToastContainer/>
       <Navbar />
