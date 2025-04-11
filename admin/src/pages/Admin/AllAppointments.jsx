@@ -32,10 +32,10 @@ const AllAppointments = () => {
           <div key={index} className='flex flex-wrap justify-between max-sm:gap-2 sm:grid sm:grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b-gray-50 hover:bg-gray-50'>
            <p className='max-sm:hidden'>{index +1}</p>
            <div className='flex items-center gap-28'>
-            <img className='w-8 rounded-full' src={item.userData.image}/>
-            <p className='max-sm:hidden'>{calculateAge(item.userData.dob)}</p>
+            <img className='w-8 rounded-full' src={item.docData.image}/>
+            <p className='max-sm:hidden'>{calculateAge(item.docData.dob)}</p>
            </div>
-           <p className='max-sm:hidden'>{calculateAge(item.userData.dob)}</p>
+           <p className='max-sm:hidden'>{calculateAge(item.docData.dob)}</p>
            <p className=''>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
         
         {/*doctor info */}
