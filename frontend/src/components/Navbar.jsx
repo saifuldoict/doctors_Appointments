@@ -18,24 +18,24 @@ const Navbar = () => {
     }
    
   return (
-    <div className=' flex item-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
+    <div className='container m-auto flex item-center justify-between text-sm py-4 mb-5  border-b-gray-400 '>
         <img onClick={()=>navigate('/')} className='w-10 cursor-pointer' src={assets.logo} alt="Logo"/>
         <ul className='hidden md:flex item-start gap-5 font-medium '>
             <NavLink to="/">
                 <li className='py-1 change'>Home</li>
-                <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto  '/>
+                <hr className='border-none outline-none h-0.5 bg-sky-500 w-5/5 m-auto hidden '/>
             </NavLink>
             <NavLink to='/doctors'>
                 <li className='py-1 change'>All Doctors</li>
-                <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto '/>
+                <hr className='border-none outline-none h-0.5 bg-sky-500 w-5/5 m-auto hidden'/>
             </NavLink>
             <NavLink to='/about'>
                 <li className='py-1 change'>About</li>
-                <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto '/>
+                <hr className='border-none outline-none h-0.5 bg-sky-500 w-4/5 m-auto hidden'/>
             </NavLink>
             <NavLink to='/contact'>
                 <li className='py-1 change'>Contact</li>
-                <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto  active'/>
+                <hr className='border-none outline-none h-0.5 bg-sky-500 w-4/5 m-auto hidden  active'/>
             </NavLink>
         </ul>
         <div className='flex item-center gap-4'>

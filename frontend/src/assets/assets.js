@@ -6,12 +6,23 @@ import doc5 from './doc5.png'
 import Vector from './Vector.png'
 import infoIcon from './infoIcon.png'
 import profile from './profile.jpg'
+import logo from './logo.jpg'
+import Gastroenterologist from './Gastroenterologist.svg'
+import General_physician from './General_physician.svg'
+import Neurologist from './Neurologist.svg'
+import Pediatricians from './Pediatricians.svg'
+
 
 export const assets = {
     Vector,
     infoIcon,
     doc2,
-    profile
+    profile,
+    logo,
+    Gastroenterologist,
+    General_physician,
+    Neurologist,
+    Pediatricians,
 }
 
 export const specialData = [

@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import { DoctorContext } from '../../context/DoctorContext'
 import { AppContext } from '../../context/AppContext';
+import { assets } from '../../assets/assets';
 
 const DoctorAppointments = () => {
-  const {dToken, appointments, getAppointments} = useContext(DoctorContext);
+  const {dToken, appointments, getAppointments, completeAppointment, cancelAppointment} = useContext(DoctorContext);
   const {calculateAge, slotDateFormat, currency} = useContext(AppContext)
 
   useEffect(()=>{
@@ -25,19 +26,32 @@ const DoctorAppointments = () => {
           <p>Action</p>
         </div>
         {
-          appointments.map((item, index) => (
-            <div key={index}>
-              <p>{index+1}</p>
-              <img src={item.userDate.image}/>
+          appointments.reverse().map((item, index) => (
+            <div className='flex flex-wrap justify-between max-sm:gap-5 max-sm:text-base sm:grid grid-cosl-[0.5fr_2fr_1Fr_1Fr_3Fr_1fr_1fr] gap-1 items-center text-gray-500 py-3 px-6 border-b hover:bg-gray-50' key={index}>
+              <p className='max-sm:hidden'>{index+1}</p>
+              <div className='flex items-center gap-2'>
+                <img className='w-8 rounded-full' src={item.userDate.image}/>  
+              </div>
               <p>{item.userDate.name}</p>
               <div>
-                <p className='text-green-500'>
+                <p className='text-green-500 text-xs inline border border-sky-500 px-2 rounded-full'>
                   {item.payment ? 'Online': 'cash'}
                 </p>
               </div>
-              <p>{calculateAge(item.userDate.dob)}</p>
+              <p className='max-sm:hidden'>{calculateAge(item.userDate.dob)}</p>
               <p>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
               <P>{currency}{item.amount}</P>
+              {
+                item.cancelled
+                ? <p className='text-red-400 font-medium'>cancelled</p>
+                  : item.isCompleted
+                     ? <p className='text-green-500 font-medium'>Completed</p>
+                      : <div className='flex'>
+                        <img onClick={()=>cancelAppointment(item._id)} className='w-10 cursor-pointer'src={assets.cancel} alt=''/>
+                        <img onClick={()=>completeAppointment(item._id)} className='q-10 cursor-pointer'src={assets.tik_icon} alt=''/>
+                      </div>
+              }
+              
             </div>
            
             

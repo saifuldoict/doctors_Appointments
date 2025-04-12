@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const About = () => {
   return (
-  <div className=' flex items-center px-40'>
+  <div className='  flex items-center px-40'>
       <div className='text-center text-2xl pt-10 text-gray-500'>
       <p>ABOUT  <span className='text-black'>US</span></p>
       <div className='flex flex-col md:flex-row gap-12 my-10'>

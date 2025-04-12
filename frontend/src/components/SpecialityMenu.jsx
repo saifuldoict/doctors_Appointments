@@ -1,5 +1,5 @@
 import React from 'react'
-import { specialData } from '../assets/assets'
+import { assets, specialData } from '../assets/assets'
 import { Link } from 'react-router-dom'
 const SpecialMenu = () => {
   return (
@@ -9,7 +9,7 @@ const SpecialMenu = () => {
         <div className="flex sm:justify-center gap-4 pt-5 w-full overflow-scroll">
           {specialData.map((item, index)=>(
             <Link onClick={()=>scrollTo(0,0)} className='flex flex-col items-center text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' to={`/doctors/${item.speciality}`}>
-              <img className='w-16 sm:w-24 mb-2' key={index} src={item.image} alt=''/>
+              <img className='w-16 sm:w-24 mb-2' key={index} src={assets.Neurologist} alt=''/>
               <p>{item.specialist}</p>
             </Link>
           ))}

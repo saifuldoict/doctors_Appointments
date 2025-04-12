@@ -21,7 +21,7 @@ const Doctors = () => {
     applyFilter()
   }, [doctors, speciality])
   return (
-    <div>
+    <div className=' container m-auto'>
       <p className='text-gray-600'>Browser through the doctors specialist</p>
     <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
       <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-sky-500 text-white': " "}`} onClick={()=>setShowFilter(prev =>!prev)}>Filters</button>

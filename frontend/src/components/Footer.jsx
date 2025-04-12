@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from '../images/logo.jpg'
+import { Link} from 'react-router-dom';
 const Footer = () => {
+    
   return (
-    <div className='md:mx-10'>
+    <div className=' container px-18 md:mx-10'>
         <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm '>
             {/*----left Section----*/}
         <div>
@@ -15,10 +17,11 @@ const Footer = () => {
         <div className=''>
             <p className='text-xl font-medium mb-5'>COMPANY</p>
             <ul className='flex flex-col gap-2 text-gray-600'>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Contact us</li>
-                <li>Privacy policy</li>
+                <Link to="/" className='hover:text-blue-500'>Home</Link>
+                <Link to="/about" className='hover:text-blue-500'>About Us</Link>
+                <Link to="/contact" className='hover:text-blue-500'>Contact Us</Link>
+                <Link to="/Footer" className='hover:text-blue-500'>Privacy policy</Link>
+
             </ul>
         </div>
         {/*----Right Section----*/}

@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Contact = () => {
   return (
-    <div className="container text-center text-2xl pt-10 text-gray-600 ">
+    <div className="container m-auto  text-center text-2xl pt-10 text-gray-600 ">
       <h1 className=' font-semibold'>Contact US</h1>
       <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28 text-sm'>
         <img className='w-full md:max-w-[360px]' src={assets.doc2}/>
