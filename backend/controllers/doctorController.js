@@ -1,11 +1,14 @@
-import doctorModel from '../models/doctorModel.js';
+
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import doctorModel from '../models/DoctorModel.js';
 import appointmentModel from '../models/appointmentModel.js';
+
 const changeAvailability = async (req, res) =>{
     try{
         const {docId} = req.body
         const docData = await doctorModel.findById(docId)
+       
         await doctorModel.findByIdAndUpdate(docId,{available: !docData.available})
         res.json({success:true, message: "Availability changed successfully"})
     }
@@ -50,6 +53,7 @@ const loginDoctor = async (req, res) => {
 const appointmentsDoctor = async ()=>{
     try{
     const {docId} = req.body
+    // const appointments = await appointmentModel.find({docId})
     const appointments = await appointmentModel.find({docId})
     res.json({success:true, appointments})
     }catch(error){
