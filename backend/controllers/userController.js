@@ -1,10 +1,10 @@
 import validator from 'validator';
 import bcrypt from 'bcrypt';
-import userModel from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
 import {v2 as cloudinary} from 'cloudinary';
 import doctorModel from '../models/DoctorModel.js';
 import appointmentModel from '../models/appointmentModel.js';
+import userModel from '../models/UserModel.js';
 // API to register a new user
 const registerUser = async (req, res) => {
     try {
@@ -41,6 +41,7 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await userModel.findOne({email})
+        // const user = await userModel.findOne({email})
         if(!user){
              res.json({success:false, message: "User not found"})
         }
