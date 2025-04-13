@@ -1,10 +1,10 @@
 import validator from 'validator';
 import bcrypt from 'bcrypt';
 import { v2 as cloudinary} from 'cloudinary';
-import doctorModel from '../models/doctorModel.js';
 import jwt from 'jsonwebtoken';
 import appointmentModel from '../models/appointmentModel.js';
 import userModel from '../models/UserModel.js';
+import doctorModel from '../models/DoctorModel.js';
 // API for adding doctor
 const addDoctor = async (req, res) => {
     try {
@@ -25,7 +25,7 @@ const addDoctor = async (req, res) => {
     }
     // hassing doctor password
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(password, salt)
     // upload image to cloudinary
     const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type:'image'})
     const imageUrl = imageUpload.secure_url
@@ -33,6 +33,7 @@ const addDoctor = async (req, res) => {
     const doctorData = {
         name,
         email,
+        image: imageUrl,
         password: hashedPassword,
         speciality,
         degree,
@@ -40,10 +41,9 @@ const addDoctor = async (req, res) => {
         about,
         fees,
         address,
-        image: imageUrl,
-        date:Date.now()
+        date: Date.now()
     }
-    const newDoctor = doctorModel(doctorData)
+    const newDoctor = new doctorModel(doctorData)
     await newDoctor.save()
     res.json({success:true, message:'Doctor Added Successfully'})
 
