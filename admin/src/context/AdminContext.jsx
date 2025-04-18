@@ -11,7 +11,8 @@ const AdminContextProvider = (props)=>{
 
     const [dashData, setDashData] =useState(false)
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const backendUrl =  "https://doctors-appointments-backendside-6f0c.onrender.com"
+    //import.meta.env.VITE_BACKEND_URL
     
     const getAllDoctors = async () => {
         try {
