@@ -2,9 +2,10 @@ import validator from 'validator';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import {v2 as cloudinary} from 'cloudinary';
-import doctorModel from '../models/DoctorModel.js';
+
 import appointmentModel from '../models/appointmentModel.js';
 import userModel from '../models/UserModel.js';
+import doctorModel from '../models/DoctorModel.js';
 // API to register a new user
 const registerUser = async (req, res) => {
     try {
@@ -102,6 +103,7 @@ const bookAppointment = async (req, res) => {
     try {
         const {userId, docId, slotDate, slotTime} = req.body
 
+        // const docData = await doctorModel.findById(docId).select('-password')
         const docData = await doctorModel.findById(docId).select('-password')
         if(!docData.available){
             return res.json({success: false, message: "Doctor not available"})
@@ -125,10 +127,10 @@ const bookAppointment = async (req, res) => {
             userId,
             docId,
             userData,
-            slotDate,
-            slotTime,
             docData,
             amount: docData.fees,
+            slotDate,
+            slotTime,   
             date: Date.now()
         }
         const newAppointment = new appointmentModel(appointmentData)

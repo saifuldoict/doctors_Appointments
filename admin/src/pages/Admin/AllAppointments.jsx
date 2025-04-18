@@ -15,7 +15,7 @@ const AllAppointments = () => {
     }
   },[aToken])
   return (
-    <div className='w-full max-w-6xl'>
+    <div className='w-full max-w-6xl m'>
       <p className='mb-3 text-lg font-medium'>All Appointments</p>
       <div className='bg-white border-1 rounded border-amber-100 text-sm max-h-[80vh] min-h-[60vh] overflow-scroll'>
         <div className='hidden sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr] grid-flow-col py-3 px-6 border-b'>
@@ -33,7 +33,7 @@ const AllAppointments = () => {
            <p className='max-sm:hidden'>{index +1}</p>
            <div className='flex items-center gap-28'>
             <img className='w-8 rounded-full' src={item.docData.image}/>
-            <p className='max-sm:hidden'>{calculateAge(item.docData.dob)}</p>
+            
            </div>
            <p className='max-sm:hidden'>{calculateAge(item.docData.dob)}</p>
            <p className=''>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>

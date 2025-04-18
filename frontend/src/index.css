@@ -19,8 +19,7 @@
 
 .display{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
     
 }
 @media (max-width: 768px) {
@@ -33,3 +32,17 @@
     height: 230px;
     width: 100%;
 }
+
+
+@keyframes marquee {
+    0% {
+      transform: translate(100%);
+    }
+    100% {
+      transform: translate(-100%);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee 10s linear infinite;
+  }

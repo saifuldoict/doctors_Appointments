@@ -25,7 +25,7 @@ export const assets = {
     Pediatricians,
 }
 
-export const specialData = [
+export const specialistInfo = [
     {
         specialist: 'General physician',
         image: 'General physician'

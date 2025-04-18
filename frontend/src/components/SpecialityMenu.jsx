@@ -1,14 +1,14 @@
 import React from 'react'
-import { assets, specialData } from '../assets/assets'
+import { assets, specialistInfo} from '../assets/assets'
 import { Link } from 'react-router-dom'
 const SpecialMenu = () => {
   return (
-    <div className='flex flex-col items-center gap-4 py-16 text-gray-800' id='speciality'>
+    <div className='flex flex-col items-center gap-4 py-16 text-gray-800' id='specialist'>
         <h1 className='text-3xl font-medium'>Find by Speciality </h1>
         <p className='sm:w-1/3 text-center text-sm'>Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
         <div className="flex sm:justify-center gap-4 pt-5 w-full overflow-scroll">
-          {specialData.map((item, index)=>(
-            <Link onClick={()=>scrollTo(0,0)} className='flex flex-col items-center text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' to={`/doctors/${item.speciality}`}>
+          {specialistInfo.map((item, index)=>(
+            <Link onClick={()=>scrollTo(0,0)} className='flex flex-col items-center text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' to={`/doctors/${item.specialist}`}>
               <img className='w-16 sm:w-24 mb-2' key={index} src={assets.Neurologist} alt=''/>
               <p>{item.specialist}</p>
             </Link>

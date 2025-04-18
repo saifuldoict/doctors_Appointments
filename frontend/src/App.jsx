@@ -11,17 +11,19 @@ import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
+import Marquee from './Marquee'
 const App = () => {
   return (
     <div className='mx-4 ms:mx-[10%]'>
       <ToastContainer/>
+      <Marquee/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path='/doctors' element={<Doctors/>}/>
-        <Route path='/doctors/:speciality' element={<Doctors/>}/>
+        <Route path='/doctors/:specialist' element={<Doctors/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/my-profile' element={<MyProfile/>}/>
         <Route path='/my-appointments' element={<MyAppointments/>}/>

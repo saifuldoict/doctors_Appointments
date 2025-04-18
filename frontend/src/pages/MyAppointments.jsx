@@ -61,7 +61,7 @@ const MyAppointments = () => {
               <p className='text-neutral-800 font-semibold'>{item.docData.name}</p>
               <p className=''>{item.docData.speciality}</p>
               <p className='text-zinc-700 font-medium mt-1'>Address :</p>
-              <p className='text-xs'>{item.docData.Address}</p>
+              <p className='text-xs'>{item.docData.address}</p>
               <p className='text-xs mt-1'><span className='text-sm text-neutral-700 font-medium'>Date & Time :</span> {slotDateFormat(item.slotDate)} | {item.slotTime}</p>
             </div>
             <div>

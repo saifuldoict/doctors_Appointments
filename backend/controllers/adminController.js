@@ -3,8 +3,9 @@ import bcrypt from 'bcrypt';
 import { v2 as cloudinary} from 'cloudinary';
 import jwt from 'jsonwebtoken';
 import appointmentModel from '../models/appointmentModel.js';
-import userModel from '../models/UserModel.js';
+
 import doctorModel from '../models/DoctorModel.js';
+import userModel from '../models/UserModel.js';
 // API for adding doctor
 const addDoctor = async (req, res) => {
     try {
@@ -121,6 +122,7 @@ const adminDashboard = async (req, res) => {
     try {
         const doctors = await doctorModel.find({})
         const user = await userModel.find({})
+        
         const appointments = await appointmentModel.find({})
 
         const dashData = {
