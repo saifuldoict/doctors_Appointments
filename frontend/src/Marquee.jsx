@@ -6,7 +6,7 @@ const Marquee = () => {
   return (
     <div className="overflow-hidden whitespace-nowrap py-3 flex items-center justify-between px-6 bg-amber-50 ">
       <div className="inline-block animate-marquee whitespace-nowrap">
-        <span className="text-xl font-bold text-red-500">20% off for  all Tests report &nbsp; &nbsp; &nbsp;</span>
+        <span className="text-xl font-bold text-red-500">20% off for  all Tests report. &nbsp; &nbsp; &nbsp;</span>
       </div>
       <div className='flex flex gap-1'>
         <div>
