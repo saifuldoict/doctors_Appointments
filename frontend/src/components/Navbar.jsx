@@ -37,7 +37,13 @@ const Navbar = () => {
                 <li className='py-1 change'>Contact</li>
                 <hr className='border-none outline-none h-0.5 bg-sky-500 w-4/5 m-auto hidden  active'/>
             </NavLink>
+
         </ul>
+        <div>
+        <NavLink to='https://doctors-appointments-admin-8xi8.onrender.com/'>
+                <button className='bg-sky-600 text-white px-4 py-3 rounded-full'>Dashboard</button>
+            </NavLink>
+        </div>
         <div className='flex item-center gap-4'>
             
                {
